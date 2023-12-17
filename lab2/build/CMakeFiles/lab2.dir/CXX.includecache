@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/nikolay_ubuntu/Homework/ParAlg_7sem/lab2/main.cpp
+iostream
+-
+parlay/parallel.h
+-
+parlay/primitives.h
+-
+parlay/sequence.h
+-
+

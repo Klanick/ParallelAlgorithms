@@ -1,0 +1,3 @@
+/home/nikolay_ubuntu/Homework/ParAlg_7sem/lab2/build/CMakeFiles/rebuild_cache.dir
+/home/nikolay_ubuntu/Homework/ParAlg_7sem/lab2/build/CMakeFiles/edit_cache.dir
+/home/nikolay_ubuntu/Homework/ParAlg_7sem/lab2/build/CMakeFiles/lab2.dir
