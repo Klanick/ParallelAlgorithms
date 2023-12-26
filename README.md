@@ -7,19 +7,29 @@ $ PARLAY_NUM_THREADS=4 ./lab1
 
 ```
 Tests is running:
-ParTime(sec) #1: 71.6332
-SeqTime(sec) #1: 230.442
-ParTime(sec) #2: 70.486
-SeqTime(sec) #2: 230.354
-ParTime(sec) #3: 70.7112
-SeqTime(sec) #3: 228.344
-ParTime(sec) #4: 70.439
-SeqTime(sec) #4: 229.131
-ParTime(sec) #5: 69.971
-SeqTime(sec) #5: 226.57
+ParTime(sec) #1: 65.6538
+ParQuickSort is correct: 1
+SeqTime(sec) #1: 232.651
+SeqQuickSort is correct: 1
+ParTime(sec) #2: 66.0836
+ParQuickSort is correct: 1
+SeqTime(sec) #2: 240.277
+SeqQuickSort is correct: 1
+ParTime(sec) #3: 68.7516
+ParQuickSort is correct: 1
+SeqTime(sec) #3: 233.257
+SeqQuickSort is correct: 1
+ParTime(sec) #4: 64.8698
+ParQuickSort is correct: 1
+SeqTime(sec) #4: 232.622
+SeqQuickSort is correct: 1
+ParTime(sec) #5: 66.1682
+ParQuickSort is correct: 1
+SeqTime(sec) #5: 231.661
+SeqQuickSort is correct: 1
 ___
-TotalTime(sec) : 1498.08
-Average K = 3.24097
+TotalTime(sec) : 1502
+Average K = 3.53054
 ```
 ### Lab #2
 ```
@@ -29,17 +39,27 @@ $ PARLAY_NUM_THREADS=4 ./lab2
 
 ```
 Tests is running:
-ParTime(sec) #1: 42.6844
-SeqTime(sec) #1: 108.44
-ParTime(sec) #2: 42.5927
-SeqTime(sec) #2: 108.468
-ParTime(sec) #3: 45.265
-SeqTime(sec) #3: 109.448
-ParTime(sec) #4: 42.5705
-SeqTime(sec) #4: 108.47
-ParTime(sec) #5: 42.556
-SeqTime(sec) #5: 108.463
+ParTime(sec) #1: 52.0894
+ParBFS is correct: 1
+SeqTime(sec) #1: 124.071
+SeqBFS is correct: 1
+ParTime(sec) #2: 55.6527
+ParBFS is correct: 1
+SeqTime(sec) #2: 129.44
+SeqBFS is correct: 1
+ParTime(sec) #3: 60.328
+ParBFS is correct: 1
+SeqTime(sec) #3: 129.015
+SeqBFS is correct: 1
+ParTime(sec) #4: 57.1891
+ParBFS is correct: 1
+SeqTime(sec) #4: 123.996
+SeqBFS is correct: 1
+ParTime(sec) #5: 51.3367
+ParBFS is correct: 1
+SeqTime(sec) #5: 113.037
+SeqBFS is correct: 1
 ___
-TotalTime(sec) : 758.957
-Average K = 2.51909
+TotalTime(sec) : 896.155
+Average K = 2.23994
 ```
