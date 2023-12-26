@@ -63,7 +63,7 @@ void seq_quick_sort(parlay::sequence<long long>& arr) {
     seq_quick_sort(arr, 0, arr.size());
 }
 
-const size_t BLOCK = 1;
+const size_t BLOCK = 1000;
 
 void par_quick_sort(parlay::sequence<long long>& arr, size_t left, size_t right) {
     if (right - left <= BLOCK) {
@@ -82,6 +82,17 @@ void par_quick_sort(parlay::sequence<long long>& arr) {
     par_quick_sort(arr, 0, arr.size());
 }
 
+bool is_sort(parlay::sequence<long long>& arr) {
+    long long prev = LLONG_MIN;
+    for (long long x : arr) {
+        if (x < prev) {
+            return false;
+        }
+        prev = x;
+    }
+    return true;
+}
+
 int main() {
     ////// n = 100000000, m = 5;
     size_t n = 100000000, m = 5;
@@ -90,33 +101,37 @@ int main() {
 
     std::cout << "Tests is running:" << std::endl;
 
-    long long par_summary = 0, seq_summary;
+    long long par_summary = 0, seq_summary = 0;
     for (int i = 0; i < m; ++i) {
         /// generate array
-        parlay::sequence<long long> arr(n);
+        parlay::sequence<long long> seq_arr(n);
         for (int j = 0; j < n; j++) {
-            arr[j] = range(m_generator);
+            seq_arr[j] = range(m_generator);
         }
-        parlay::sequence<long long> arr_copy(arr);
+        parlay::sequence<long long> par_arr(seq_arr);
 
 
         /// parallel quick_sort
         auto start_par = std::chrono::steady_clock::now();
-        par_quick_sort(arr_copy);
+        par_quick_sort(par_arr);
         auto end_par = std::chrono::steady_clock::now();
 
         long long par_micro_sec = std::chrono::duration_cast<std::chrono::microseconds>(end_par - start_par).count();
         std::cout << "ParTime(sec) #" << i + 1 << ": " << (long double) par_micro_sec / 1000000 << std::endl;
         par_summary += par_micro_sec;
 
+        std::cout << "ParQuickSort is correct: " <<  is_sort(par_arr) << std::endl;
+
         /// sequential quick_sort
         auto start_seq = std::chrono::steady_clock::now();
-        seq_quick_sort(arr);
+        seq_quick_sort(seq_arr);
         auto end_seq = std::chrono::steady_clock::now();
 
         long long seq_micro_sec = std::chrono::duration_cast<std::chrono::microseconds>(end_seq - start_seq).count();
         std::cout << "SeqTime(sec) #" << i + 1 << ": " << (long double) seq_micro_sec / 1000000 << std::endl;
         seq_summary += seq_micro_sec;
+
+        std::cout << "SeqQuickSort is correct: " <<  is_sort(seq_arr) << std::endl;
     }
 
     std::cout << "___" << std::endl;
